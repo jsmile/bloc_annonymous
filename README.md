@@ -1,6 +1,6 @@
 # bloc_annonymous
 
-A new Flutter project.
+A Flutter BLoC Annonyous Route project.
 
 ## Getting Started
 
