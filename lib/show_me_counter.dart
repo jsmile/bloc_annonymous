@@ -17,6 +17,17 @@ class ShowMeCounter extends StatelessWidget {
             color: Colors.blue,
             fontSize: 52.0,
           ),
+          // BlocBuilder<CounterCubit, CounterState>(
+          //   builder: (context, state) {
+          //     return Text(
+          //       '${state.counter}',
+          //       style: const TextStyle(
+          //         color: Colors.blue,
+          //         fontSize: 52.0,
+          //       ),
+          //     );
+          //   },
+          // ),
         ),
       ),
     );
