@@ -55,6 +55,7 @@ class MyHomePage extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
+                  // new sub-route 생성
                   context, // MyHomePage context
                   MaterialPageRoute(
                     builder: (context) {
