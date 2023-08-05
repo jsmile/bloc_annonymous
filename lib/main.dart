@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext myHomePageContext) {
     // MyHomePage context
     return Scaffold(
       // appBar: AppBar(
@@ -56,13 +56,14 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   // Navigator.push : new sub-route 생성
-                  context, // MyHomePage context
+                  myHomePageContext, // MyHomePage context
                   MaterialPageRoute(
-                    builder: (context) {
+                    builder: (pageRouteContext) {
                       // .value() 생성자를 통해서
                       return BlocProvider.value(
                         // widget tree 에서 이미 존재하는 value:에 해당하는 class 를 찾아줌
-                        value: context.read<CounterCubit>(), // context error
+                        value: myHomePageContext
+                            .read<CounterCubit>(), // context error
                         child: const ShowMeCounter(),
                       );
                     },
@@ -82,7 +83,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 // MyHomePage context
                 // context.read<CounterCubit>().increment();
-                BlocProvider.of<CounterCubit>(context).increment();
+                BlocProvider.of<CounterCubit>(myHomePageContext).increment();
               },
             ),
           ],

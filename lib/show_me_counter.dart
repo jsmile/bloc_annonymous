@@ -7,7 +7,7 @@ class ShowMeCounter extends StatelessWidget {
   const ShowMeCounter({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext showMeContext) {
     return Scaffold(
       // backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
@@ -16,7 +16,7 @@ class ShowMeCounter extends StatelessWidget {
       body: Center(
         child: BlocBuilder<CounterCubit, CounterState>(
           // State 를 사용할 수 있는 BlocBuilder() 사용
-          builder: (context, state) {
+          builder: (showMeContext, state) {
             return Text(
               '${state.counter}',
               style: const TextStyle(
