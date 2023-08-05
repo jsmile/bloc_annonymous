@@ -1,6 +1,7 @@
-import 'package:bloc_annonymous/cubits/counter/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'cubits/counter/counter_cubit.dart';
 
 class ShowMeCounter extends StatelessWidget {
   const ShowMeCounter({super.key});
@@ -14,6 +15,7 @@ class ShowMeCounter extends StatelessWidget {
       ),
       body: Center(
         child: BlocBuilder<CounterCubit, CounterState>(
+          // State 를 사용할 수 있는 BlocBuilder() 사용
           builder: (context, state) {
             return Text(
               '${state.counter}',

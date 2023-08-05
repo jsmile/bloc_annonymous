@@ -55,12 +55,16 @@ class MyHomePage extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(
-                  // new sub-route 생성
+                  // Navigator.push : new sub-route 생성
                   context, // MyHomePage context
                   MaterialPageRoute(
                     builder: (context) {
-                      // ShowMeCounter context
-                      return const ShowMeCounter();
+                      // .value() 생성자를 통해서
+                      return BlocProvider.value(
+                        // widget tree 에서 이미 존재하는 value:에 해당하는 class 를 찾아줌
+                        value: context.read<CounterCubit>(), // context error
+                        child: const ShowMeCounter(),
+                      );
                     },
                   ),
                 );
